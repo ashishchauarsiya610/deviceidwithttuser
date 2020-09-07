@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      BLE Connect
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="scan()">
+        scan
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list> 
+    <!-- <ion-item>{{devices}}</ion-item> -->
+    <ion-item *ngFor="let device of devices" (click)="data(device)">
+      <ion-label>
+      <h2>
+        
+{{ device.name || 'Unnamed' }}</h2>
+{{ device.id }}
+     RSSI: {{ device.rssi }}
+
+
+      </ion-label> 
+    </ion-item>
+    
+   </ion-list> 
+   <ion-button expand="full" color="success" (click)="getUniqueDeviceID()">Device id</ion-button>
+   <ion-button expand="full" color="success" (click)="getUniqueDeviceID()">Device_id-{{UniqueDeviceID}}</ion-button>
+   <ion-button expand="full" color="success" (click)="getID_UID(type)">IMEI-{{emei}}</ion-button>
+   <ion-button expand="full" color="success" (click)="getID_UID(type)">IMSI-{{imsi}}</ion-button>
+   <ion-button expand="full" color="success" (click)="getID_UID(type)">MAC-{{mac}}</ion-button>
+   <ion-button expand="full" color="success" (click)="getID_UID(type)">UUID-{{uuid}}</ion-button>
+  
+  
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-item>
+    <ion-label>{{ statusMessage }}</ion-label>
+    </ion-item>
+  </ion-toolbar>
+</ion-footer>

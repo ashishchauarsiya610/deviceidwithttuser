@@ -1,0 +1,7 @@
+{
+  "name": "ttlock",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
